@@ -1,5 +1,5 @@
-Author:Zhizhuo Zhang
-Date: 12/27/2015
+### Author:Zhizhuo Zhang
+### Date: 12/27/2015
 
 
 5utrdesign
@@ -36,6 +36,7 @@ Workflow (detail is described in `makefile` file)
 
 - select diverse optimized sequences for UTR synthesis 
 > make all_seljob
+
 > make output/final/synthetic3K.txt
 
 
