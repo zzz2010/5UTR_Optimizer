@@ -7,8 +7,9 @@ Jicong Cao, Eva Maria Novoa, Zhizhuo Zhang, William C.W. Chen, Dianbo Liu, Gigi 
 1.Design of 5'UTR sequences
 ==========
 
-Goal: Design optimal 5'UTRs to maximize the translation efficiency (TE).
-Algorithm used: **Random Forest** to build a prediction model 
+*Goal*: Design optimal 5'UTRs to maximize the translation efficiency (TE).
+
+*Algorithm used*: **Random Forest** to build a prediction model 
 
 Features used in Random Forest model training:
 - Kmer-frequency: k=1-6
@@ -22,8 +23,9 @@ The model seems to work well. Using 10fold cross-valiation, we obtained  0.71 pe
 2.Workflow (detail is described in `makefile` file)
 =====================
 
-Goal: evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
-Algorithm used: Genetic Algorithm (GA)
+*Goal*: evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
+
+*Algorithm used*: **Genetic Algorithm (GA)**
 
 Steps performed: 
 - extract DNA sequence 5'UTR+first CDS
