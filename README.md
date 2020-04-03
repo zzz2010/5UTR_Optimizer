@@ -29,27 +29,31 @@ The model seems to work well. Using 10fold cross-valiation, we obtained  0.71 pe
 
 Steps performed: 
 - extract DNA sequence 5'UTR+first CDS
-> make output/gencode_v17_5utr_15bpcds.fa
+``` make output/gencode_v17_5utr_15bpcds.fa
+```
 
 - compute sequence feature
-> use .viennarna-2.1.9
-> use .biopython-1.64-python-2.7.1-sqlite3-rtrees
-> make output/gencode_v17_5utr_15bpcds.fa.sparseFeature.txt.gz
-
+``` 
+use .viennarna-2.1.9
+use .biopython-1.64-python-2.7.1-sqlite3-rtrees
+make output/gencode_v17_5utr_15bpcds.fa.sparseFeature.txt.gz
+``` 
 - build prediction model for TE and Ribo-seq expression
-> make output/gencode_v17_5utr_15bpcds.fa.model
-
+``` 
+make output/gencode_v17_5utr_15bpcds.fa.model
+``` 
 - design optimal 100bp 5UTR sequence for maximizing TE
-> make all_evojob.TE
-
+``` 
+make all_evojob.TE
+``` 
 - design optimal 100bp 5UTR sequence for maximizing Ribo-seq expression
-> make all_evojob.Ribo
-
+``` make all_evojob.Ribo
+``` 
 - select diverse optimized sequences for UTR synthesis 
-> make all_seljob
-
-> make output/final/synthetic3K.txt
-
+``` 
+make all_seljob
+make output/final/synthetic3K.txt
+``` 
 
 3.Data sources
 ===========
