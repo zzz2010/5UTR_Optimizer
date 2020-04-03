@@ -1,5 +1,10 @@
-### Author:Zhizhuo Zhang
-### Date: 12/27/2015
+### Last Updated: April 2020
+
+### Code accompanying paper:
+High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies
+
+Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis#, Timothy K Lu#.
+doi: https://doi.org/10.1101/2020.03.24.006486
 
 
 5utrdesign
