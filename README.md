@@ -1,10 +1,7 @@
-### Last Updated: April 2020
+# Code accompanying paper:
 
-### Code accompanying paper:
-High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies
 
-Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis#, Timothy K Lu#.
-doi: https://doi.org/10.1101/2020.03.24.006486
+Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis#, Timothy K Lu#. High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. doi: https://doi.org/10.1101/2020.03.24.006486
 
 
 1.Design of 5'UTR sequences
@@ -52,8 +49,10 @@ Steps performed:
 > make output/final/synthetic3K.txt
 
 
-3.Data
+3.Data sources
 ===========
-- df_counts_and_len.TE_sorted.with_annot.txt: Muscle RNA-seq and Ribo-seq data from Eva Maria Novoa
+- df_counts_and_len.TE_sorted.with_annot.txt: Muscle RNA-seq and Ribo-seq data from publicly available datasets (PC3, HEK and muscle)
 - entiredata_2015_12_25_3-25_pm: RNA binding motif, downloaded from http://cisbp-rna.ccbr.utoronto.ca/
  
+
+# Last Updated: April 2020
