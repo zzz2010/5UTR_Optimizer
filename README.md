@@ -29,7 +29,8 @@ The model seems to work well. Using 10fold cross-valiation, we obtained  0.71 pe
 
 Steps performed: 
 - extract DNA sequence 5'UTR+first CDS
-``` make output/gencode_v17_5utr_15bpcds.fa
+``` 
+make output/gencode_v17_5utr_15bpcds.fa
 ```
 
 - compute sequence feature
