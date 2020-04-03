@@ -1,6 +1,7 @@
 # Code accompanying paper:
+High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. 
 
-Jicong Cao, Eva Maria Novoa, Zhizhuo Zhang, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
+Jicong Cao, Eva Maria Novoa, Zhizhuo Zhang, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
 
 
 1.Design of 5'UTR sequences
