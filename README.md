@@ -7,21 +7,28 @@ Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang, William C.W. Chen, Dianbo Liu, Gig
 doi: https://doi.org/10.1101/2020.03.24.006486
 
 
-5utrdesign
+1.Design of 5'UTR sequences
 ==========
 
-Design optimal 5utr to maximize the translation efficiency.
-I use Randomforest to build a prediction model with the following features:
+Goal: Design optimal 5'UTRs to maximize the translation efficiency (TE).
+Algorithm used: **Random Forest** to build a prediction model 
+
+Features used in Random Forest model training:
 - Kmer-frequency: k=1-6
 - RNAfolding energy for first 100bp, last 30bp(15bp UTR+ 15bp CDS), whole (5UTR+15bp CDS), 5UTR only, with/without consdiering G-quadruplex 
 - codon usage
 - number of start and stop condon in UTR
 - 5UTR length
 
-The model seems work well. Using 10fold cross-valiation, I got 0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction
+The model seems to work well. Using 10fold cross-valiation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction
 
-Workflow (detail is described in `makefile` file)
+2.Workflow (detail is described in `makefile` file)
 =====================
+
+Goal: evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
+Algorithm used: Genetic Algorithm (GA)
+
+Steps performed: 
 - extract DNA sequence 5'UTR+first CDS
 > make output/gencode_v17_5utr_15bpcds.fa
 
@@ -45,7 +52,7 @@ Workflow (detail is described in `makefile` file)
 > make output/final/synthetic3K.txt
 
 
-Data
+3.Data
 ===========
 - df_counts_and_len.TE_sorted.with_annot.txt: Muscle RNA-seq and Ribo-seq data from Eva Maria Novoa
 - entiredata_2015_12_25_3-25_pm: RNA binding motif, downloaded from http://cisbp-rna.ccbr.utoronto.ca/
