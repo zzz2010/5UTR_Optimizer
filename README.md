@@ -20,6 +20,7 @@ High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Vira
 - [Step 1. Design of 5'UTR sequences](#Step-1.-Design-of-5'UTR-sequences)
 - [Step 2. 5'UTR model generation and evaluation](#Step-2.-5'UTR-model-generation-and-evaluation)
 - [Step 3. Generation of novel evolved 5'UTR sequences](#Step-3.-Generation-of-novel-evolved-5'UTR-sequences)
+- [Running individual scripts for each of the steps performed](#Running-individual-scripts-for-each-of-the-steps-performed)
 - [Additional data sources](#Additional-data-sources)
 - [Dependencies and versions](#Dependencies-and-versions)
 - [Citation](#Citation) 
@@ -60,40 +61,40 @@ Results: Using 10-fold cross-validation, we obtained  0.71 pearson correlation i
 
 Additional details of individual steps are described in `makefile` file)
 
-### Steps performed: 
+#### Running the code:
+```
+ZHIZHUO TO FILL IN 
+```
 
-- extract DNA sequence 5'UTR+first CDS
+## Running individual scripts for each of the steps performed: 
+
+- 1. Extract DNA sequence 5'UTR+first CDS
 ``` 
 make output/gencode_v17_5utr_15bpcds.fa
 ```
 
-- compute sequence feature
+- 2. Compute sequence feature
 ``` 
 use .viennarna-2.1.9
 use .biopython-1.64-python-2.7.1-sqlite3-rtrees
 make output/gencode_v17_5utr_15bpcds.fa.sparseFeature.txt.gz
 ``` 
-- build prediction model for TE and Ribo-seq expression
+- 3. Build prediction model for TE and Ribo-seq expression
 ``` 
 make output/gencode_v17_5utr_15bpcds.fa.model
 ``` 
-- design optimal 100bp 5UTR sequence for maximizing TE
+- 4. Design optimal 100bp 5UTR sequence for maximizing TE
 ``` 
 make all_evojob.TE
 ``` 
-- design optimal 100bp 5UTR sequence for maximizing Ribo-seq expression
+- 5. Design optimal 100bp 5UTR sequence for maximizing Ribo-seq expression
 ``` make all_evojob.Ribo
 ``` 
-- select diverse optimized sequences for UTR synthesis 
+- 6. Select diverse optimized sequences for 5'UTR synthesis 
 ``` 
 make all_seljob
 make output/final/synthetic3K.txt
 ``` 
-
-### Running the code of STEP 3  at once:
-```
-ZHIZHUO TO FILL IN 
-```
 
 
 ## Additional data sources 
