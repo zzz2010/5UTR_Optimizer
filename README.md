@@ -17,16 +17,16 @@ High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Vira
 
 
 ## Table of Contents
-- [1. Design of 5'UTR sequences](#1.-Design-of-5'UTR-sequences)
-- [2. 5'UTR model generation and evaluation](#2.-5'UTR-model-generation-and-evaluation)
-- [3. Generation of novel evolved 5'UTR sequences](#3.-Generation-of-novel-evolved-5'UTR-sequences)
+- [Step 1. Design of 5'UTR sequences](#Step-1.-Design-of-5'UTR-sequences)
+- [Step 2. 5'UTR model generation and evaluation](#Step-2.-5'UTR-model-generation-and-evaluation)
+- [Step 3. Generation of novel evolved 5'UTR sequences](#Step-3.-Generation-of-novel-evolved-5'UTR-sequences)
 - [Additional data sources](#Additional-data-sources)
 - [Dependencies and versions](#Dependencies-and-versions)
 - [Citation](#Citation) 
 - [Contact](#Contact) 
  
 
-## 1. Feature extraction of 5'UTR sequences 
+## Step 1. Feature extraction of 5'UTR sequences 
 
 **Goal**: Extract features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
 
@@ -43,7 +43,7 @@ HERE DETAILS TO BE FILLED IN BY ZHIZHUO
 ```
 
 
-## 2. 5'UTR model generation and evaluation
+## Step 2. 5'UTR model generation and evaluation
 
 **Goal**: Generate and evaluate model  features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
 
@@ -52,7 +52,7 @@ HERE DETAILS TO BE FILLED IN BY ZHIZHUO
 The model trained for human sequences is available as part of this repository. 
 Results: Using 10-fold cross-validation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction.
 
-## 3. Generation of novel evolved 5'UTR sequences
+## Step 3. Generation of novel evolved 5'UTR sequences
 
 **Goal**: Evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
 
