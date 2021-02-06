@@ -1,4 +1,4 @@
-# Design of enhanced 5'UTR sequences for enhanced protein production
+# Design of evolved synthetic 5'UTR sequences for enhanced protein production
 
 The goal of this workflow is to generate novel 5'UTR sequences with optimized features to maximize the translation efficiency of the constructs. 
 
