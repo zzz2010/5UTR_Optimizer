@@ -53,6 +53,12 @@ HERE DETAILS TO BE FILLED IN BY ZHIZHUO
 The model trained for human sequences is available as part of this repository. 
 Results: Using 10-fold cross-validation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction.
 
+### Running the code: 
+``` 
+HERE DETAILS TO BE FILLED IN BY ZHIZHUO
+```
+
+
 ## Step 3. Generation of novel evolved 5'UTR sequences
 
 **Goal**: Evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
