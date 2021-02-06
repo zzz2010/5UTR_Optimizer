@@ -3,10 +3,10 @@
 The goal of this workflow is to generate novel 5'UTR sequences with optimized features to maximize the translation efficiency of the constructs. 
 This is done through 4 steps:
 
-Step 1. **Feature extraction** from endogenous sequences 
-Step 2. **Random Forest model generation** of the extracted features to predict Translation Efficiency (TE)
-Step 3. **Model evaluation** 
-Step 4. Generation of novel **'evolved' sequences using a Genetic Algorithm** 
+- Step 1. **Feature extraction** from endogenous sequences 
+- Step 2. **Random Forest model generation** of the extracted features to predict Translation Efficiency (TE)
+- Step 3. **Model evaluation** 
+- Step 4. Generation of novel **'evolved' sequences using a Genetic Algorithm** 
 
 
 This repository is the code accompanying the paper:
