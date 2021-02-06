@@ -1,17 +1,31 @@
 # Design of enhanced 5'UTR sequences for enhanced protein production
 
-This code with generate with features 
+The goal of this workflow is to generate novel 5'UTR sequences with optimized features to maximize the translation efficiency of the constructs. 
+This is done through 4 steps:
 
-This GitHub code accompanying paper:
-High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. 
+Step 1. **Feature extraction** from endogenous sequences 
+Step 2. **Random Forest model generation** of the extracted features to predict Translation Efficiency (TE)
+Step 3. **Model evaluation** 
+Step 4. Generation of novel **'evolved' sequences using a Genetic Algorithm** 
 
-Jicong Cao, Eva Maria Novoa, Zhizhuo Zhang, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
 
+This repository is the code accompanying the paper:
+High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang*, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
 
-## Design of 5'UTR sequences
-==============================
+## Table of Contents
+- [1. Design of 5'UTR sequences](#1._Design_of_5'UTR_sequences)
+- [De novo prediction of RNA modified sites](#De-novo-prediction-of-RNA-modified-sites)
+- [RNA modification stoichiometry estimation using Nanopolish resquiggling (not recommended)](#RNA-modification-stoichiometry-estimation-using-nanopolish-resquiggling)
+- [RNA modification stoichiometry estimation using Tombo resquiggling (recommended)](#RNA-modification-stoichiometry-estimation-using-tombo-resquiggling)
+- [Visualization of per-read current intensities at individual sites](Visualization-of-per-read-current-intensities-at-individual-sites)
+- [Dependencies and versions](#Dependencies-and-versions)
+- [Citation](#Citation) 
+- [Contact](#Contact) 
+ 
 
-*Goal*: Design optimal 5'UTRs to maximize the translation efficiency (TE).
+## 1. Design of 5'UTR sequences
+
+*Goal*: Extract features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
 
 *Algorithm used*: **Random Forest** to build a prediction model 
 
@@ -25,7 +39,6 @@ Features used in Random Forest model training:
 The model seems to work well. Using 10fold cross-valiation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction
 
 ## 2.Workflow (detail is described in `makefile` file)
-======================================================
 
 *Goal*: evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
 
@@ -60,10 +73,15 @@ make all_seljob
 make output/final/synthetic3K.txt
 ``` 
 
-3.Data sources
-===========
+## 3.Data sources
+
 - df_counts_and_len.TE_sorted.with_annot.txt: Muscle RNA-seq and Ribo-seq data from publicly available datasets (PC3, HEK and muscle)
 - entiredata_2015_12_25_3-25_pm: RNA binding motif, downloaded from http://cisbp-rna.ccbr.utoronto.ca/
  
 
+## Citation
+If you find this work useful, please cite: 
+High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang*, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
+
 ### Last Updated: April 2020
+
