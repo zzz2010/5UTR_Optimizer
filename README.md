@@ -23,7 +23,7 @@ High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Vira
 
 ## 1. Feature extraction of 5'UTR sequences 
 
-*Goal*: Extract features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
+- *Goal*: Extract features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
 
 Features used in Random Forest model training:
 - Kmer-frequency: k=1-6
@@ -40,18 +40,18 @@ HERE DETAILS TO BE FILLED IN BY ZHIZHUO
 
 ## 2. 5'UTR model generation and evaluation
 
-*Goal*: Generate and evaluate model  features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
+- *Goal*: Generate and evaluate model  features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
 
-*Algorithm used*: **Random Forest** to build a prediction model 
+- *Algorithm used*: **Random Forest** to build a prediction model 
 
 The model trained for human sequences is available as part of this repository. 
 Results: Using 10-fold cross-validation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction.
 
 ## 3. Generation of novel evolved 5'UTR sequences
 
-*Goal*: Evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
+- *Goal*: Evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
 
-*Algorithm used*: **Genetic Algorithm (GA)**
+- *Algorithm used*: **Genetic Algorithm (GA)**
 
 Additional details of individual steps are described in `makefile` file)
 
