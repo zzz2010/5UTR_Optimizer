@@ -4,9 +4,8 @@ The goal of this workflow is to generate novel 5'UTR sequences with optimized fe
 This is done through 4 steps:
 
 - Step 1. **Feature extraction** from endogenous sequences 
-- Step 2. **Random Forest model generation** of the extracted features to predict Translation Efficiency (TE)
-- Step 3. **Model evaluation** 
-- Step 4. Generation of novel **'evolved' sequences using a Genetic Algorithm** 
+- Step 2. **Random Forest model generation** and evaluation, using extracted features to predict Translation Efficiency (TE)
+- Step 3. Generation of novel **'evolved' sequences using a Genetic Algorithm** 
 
 
 This repository is the code accompanying the paper:
@@ -14,20 +13,17 @@ High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Vira
 
 ## Table of Contents
 - [1. Design of 5'UTR sequences](#1._Design_of_5'UTR_sequences)
-- [De novo prediction of RNA modified sites](#De-novo-prediction-of-RNA-modified-sites)
-- [RNA modification stoichiometry estimation using Nanopolish resquiggling (not recommended)](#RNA-modification-stoichiometry-estimation-using-nanopolish-resquiggling)
-- [RNA modification stoichiometry estimation using Tombo resquiggling (recommended)](#RNA-modification-stoichiometry-estimation-using-tombo-resquiggling)
-- [Visualization of per-read current intensities at individual sites](Visualization-of-per-read-current-intensities-at-individual-sites)
-- [Dependencies and versions](#Dependencies-and-versions)
+- [2. 5'UTR model generation and evaluation](#2._5'UTR_model_generation_and_evaluation)
+- [3. Generation of novel evolved 5'UTR sequences](#3._Generation_of_novel_evolved_5'UTR_sequences)
+- [Additional data sources](#Additional_data_sources)
+- [Dependencies and versions](#Dependencies_and_versions)
 - [Citation](#Citation) 
 - [Contact](#Contact) 
  
 
-## 1. Design of 5'UTR sequences
+## 1. Feature extraction of 5'UTR sequences 
 
 *Goal*: Extract features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
-
-*Algorithm used*: **Random Forest** to build a prediction model 
 
 Features used in Random Forest model training:
 - Kmer-frequency: k=1-6
@@ -36,15 +32,30 @@ Features used in Random Forest model training:
 - number of start and stop condon in UTR
 - 5UTR length
 
-The model seems to work well. Using 10fold cross-valiation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction
+### Running the code: 
+``` 
+HERE DETAILS TO BE FILLED IN BY ZHIZHUO
+```
 
-## 2.Workflow (detail is described in `makefile` file)
 
-*Goal*: evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
+## 2. 5'UTR model generation and evaluation
+
+*Goal*: Generate and evaluate model  features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
+
+*Algorithm used*: **Random Forest** to build a prediction model 
+
+The model trained for human sequences is available as part of this repository. 
+Results: Using 10-fold cross-validation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction.
+
+## 3. Generation of novel evolved 5'UTR sequences
+
+*Goal*: Evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
 
 *Algorithm used*: **Genetic Algorithm (GA)**
 
-Steps performed: 
+Additional details of individual steps are described in `makefile` file)
+
+### Steps performed: 
 - extract DNA sequence 5'UTR+first CDS
 ``` 
 make output/gencode_v17_5utr_15bpcds.fa
@@ -73,15 +84,27 @@ make all_seljob
 make output/final/synthetic3K.txt
 ``` 
 
-## 3.Data sources
+### Running the code of STEP 3  at once:
+```
+ZHIZHUO TO FILL IN 
+```
+
+
+## Additional data sources 
 
 - df_counts_and_len.TE_sorted.with_annot.txt: Muscle RNA-seq and Ribo-seq data from publicly available datasets (PC3, HEK and muscle)
 - entiredata_2015_12_25_3-25_pm: RNA binding motif, downloaded from http://cisbp-rna.ccbr.utoronto.ca/
  
+## Dependencies and versions
+
+** ZHIZHUO TO FILL IN ** 
 
 ## Citation
 If you find this work useful, please cite: 
 High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang*, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
 
-### Last Updated: April 2020
+## Contact
+If you have any issues using this code, please open an Issue in the GitHub repository. Thanks!
+
+### Last Updated: February 2021
 
