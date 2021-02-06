@@ -110,6 +110,12 @@ make output/final/synthetic3K.txt
 
 ** ZHIZHUO TO FILL IN ** 
 
+| Software | Version |
+| ------------- | ------------- |
+| Software1  | Version1  |
+| Software2  | Version X  |
+
+
 ## Citation
 If you find this work useful, please cite: 
 
