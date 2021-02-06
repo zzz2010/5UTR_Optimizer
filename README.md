@@ -1,19 +1,16 @@
 # Design of evolved synthetic 5'UTR sequences for enhanced protein production
 
 The goal of this workflow is to generate novel 5'UTR sequences with optimized features to maximize the translation efficiency of the constructs. 
-
 This is achieved in 3 steps:
 
 - Step 1. **Feature extraction** from endogenous sequences 
 - Step 2. **Random Forest model generation** and evaluation, using extracted features to predict Translation Efficiency (TE)
 - Step 3. Generation of novel **'evolved' sequences using a Genetic Algorithm** 
 
+This repository is the code accompanying the paper:High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang*, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
+
+
 ![alt text](./img/init_fig.png "init_fig")
-
-This repository is the code accompanying the paper:
-
-High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang*, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
-
 
 
 ## Table of Contents
