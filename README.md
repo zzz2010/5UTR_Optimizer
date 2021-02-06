@@ -91,7 +91,8 @@ make output/gencode_v17_5utr_15bpcds.fa.model
 make all_evojob.TE
 ``` 
 - 5. Design optimal 100bp 5UTR sequence for maximizing Ribo-seq expression
-``` make all_evojob.Ribo
+``` 
+make all_evojob.Ribo
 ``` 
 - 6. Select diverse optimized sequences for 5'UTR synthesis 
 ``` 
