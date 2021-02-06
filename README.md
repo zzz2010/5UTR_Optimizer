@@ -34,8 +34,8 @@ Features used in Random Forest model training:
 - Kmer-frequency: k=1-6
 - RNAfolding energy for first 100bp, last 30bp(15bp UTR+ 15bp CDS), whole (5UTR+15bp CDS), 5UTR only, with/without consdiering G-quadruplex 
 - codon usage
-- number of start and stop condon in UTR
-- 5UTR length
+- number of start and stop codon in UTR
+- 5'UTR length
 
 ### Running the code: 
 ``` 
