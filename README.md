@@ -12,11 +12,11 @@ This repository is the code accompanying the paper:
 High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang*, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
 
 ## Table of Contents
-- [1. Design of 5'UTR sequences](#1._Design_of_5'UTR_sequences)
-- [2. 5'UTR model generation and evaluation](#2._5'UTR_model_generation_and_evaluation)
-- [3. Generation of novel evolved 5'UTR sequences](#3._Generation_of_novel_evolved_5'UTR_sequences)
-- [Additional data sources](#Additional_data_sources)
-- [Dependencies and versions](#Dependencies_and_versions)
+- [1. Design of 5'UTR sequences](#1.-Design-of-5'UTR-sequences)
+- [2. 5'UTR model generation and evaluation](#2.-5'UTR-model-generation-and-evaluation)
+- [3. Generation of novel evolved 5'UTR sequences](#3.-Generation-of-novel-evolved-5'UTR-sequences)
+- [Additional data sources](#Additional-data-sources)
+- [Dependencies and versions](#Dependencies-and-versions)
 - [Citation](#Citation) 
 - [Contact](#Contact) 
  
