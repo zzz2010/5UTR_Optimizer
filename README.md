@@ -1,11 +1,15 @@
-# Code accompanying paper:
+# Design of enhanced 5'UTR sequences for enhanced protein production
+
+This code with generate with features 
+
+This GitHub code accompanying paper:
 High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. 
 
 Jicong Cao, Eva Maria Novoa, Zhizhuo Zhang, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
 
 
-1.Design of 5'UTR sequences
-==========
+## Design of 5'UTR sequences
+==============================
 
 *Goal*: Design optimal 5'UTRs to maximize the translation efficiency (TE).
 
@@ -20,8 +24,8 @@ Features used in Random Forest model training:
 
 The model seems to work well. Using 10fold cross-valiation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction
 
-2.Workflow (detail is described in `makefile` file)
-=====================
+## 2.Workflow (detail is described in `makefile` file)
+======================================================
 
 *Goal*: evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
 
