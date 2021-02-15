@@ -29,11 +29,11 @@ This repository is the code accompanying the paper:High-Throughput 5’ UTR Engi
 
 **Goal**: Extract features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
 
-Features used in Random Forest model training:
+The features used in Random Forest model training (extracted from endogenous sequences) are:
 - Kmer-frequency: k=1-6
-- RNAfolding energy for first 100bp, last 30bp(15bp UTR+ 15bp CDS), whole (5UTR+15bp CDS), 5UTR only, with/without consdiering G-quadruplex 
-- codon usage
-- number of start and stop codon in UTR
+- RN Afolding energy for: i) the first 100bp of the 5'UTR, ii) last 30bp(15bp UTR+ 15bp CDS), iii) whole (5UTR+15bp CDS), iv) 5'UTR only, with/without considering G-quadruplex 
+- Codon usage (of the 15 first bp of the CDS region)
+- Number of start and stop codons in teh 5'UTR
 - 5'UTR length
 
 ### Running the code: 
@@ -51,7 +51,6 @@ The model trained for human sequences is available as part of this repository.
 Results: Using 10-fold cross-validation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction.
 
 ### Running the code: 
-Build full model
 ``` 
 python run_pipeline.py model_build --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --model 1 --out output/muscle_randomforest.model
 ```
@@ -60,10 +59,8 @@ python run_pipeline.py model_build --prefix output/input.fa --annotation_file da
 
 **Goal**: Evaluate the Random Forest models generated in the previous step to predict translation efficiency
 
-**Algorithm used**: **TO BE FILLED IN**
-
 #### Running the code:
-Evaluate different choices of ML model
+
 ```
 python run_pipeline.py model_eval --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --model 1 --out output/muscle_randomforest.model
 ```
