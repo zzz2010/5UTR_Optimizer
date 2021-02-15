@@ -1,0 +1,25 @@
+name: 5utr
+
+channels:
+ - defaults
+ - bioconda
+ - r
+ - conda-forge
+dependencies:
+  - python=3.5
+  - r-domc
+  - r-optparse
+  - r-seqinr
+  - r-metrics
+  - r-e1071
+  - r-rpart
+  - r-caret
+  - r-ga
+  - r-doparallel
+  - r-glmnet
+  - r-randomforest
+  - bioconductor-genomicfeatures
+  - bioconductor-bsgenome.hsapiens.ucsc.hg19
+  - biopython
+  - r-tidyverse
+  - viennarna=2.1.9

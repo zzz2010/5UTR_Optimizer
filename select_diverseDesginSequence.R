@@ -1,8 +1,4 @@
 
-similarThresh=160 #higher mean more similar
-bestN=5
-first3IterTop=1
-first3IterBottom=1
 library("seqinr")
 library(Biostrings)
 library(foreach)

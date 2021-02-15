@@ -2,11 +2,11 @@
 #Date: 12/27/2015
 
 .SECONDARY:
-output/gencode_v17_5utr_15bpcds.fa:extractSequence_5utr_cds.R
-	Rscript $<
+# output/gencode_v17_5utr_15bpcds.fa:extractSequence_5utr_cds.R
+# 	Rscript $<
 
-output/gencode_v17_5utr_15bpcds.fa.sparseFeature.txt.gz output/gencode_v17_5utr_15bpcds.fa.filter.fa:FeatureExtraction_final.py output/gencode_v17_5utr_15bpcds.fa
-	use .viennarna-2.1.9	
+output/gencode_v17_5utr_15bpcds.fa.sparseFeature.txt.gz output/gencode_v17_5utr_15bpcds.fa.filter.fa:FeatureExtraction_final.py data/gencode_v17_5utr_15bpcds.fa
+# 	use .viennarna-2.1.9
 	python -W ignore $^
 
 
