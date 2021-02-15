@@ -30,8 +30,8 @@ This repository is the code accompanying the paper:High-Throughput 5’ UTR Engi
 **Goal**: Extract features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
 
 The features used in Random Forest model training (extracted from endogenous sequences) are:
-- Kmer-frequency: k=1-6
-- RN Afolding energy for: i) the first 100bp of the 5'UTR, ii) last 30bp(15bp UTR+ 15bp CDS), iii) whole (5UTR+15bp CDS), iv) 5'UTR only, with/without considering G-quadruplex 
+- K-mer frequency: k=1-6
+- RNA folding energy for: i) the first 100bp of the 5'UTR, ii) last 30bp(15bp UTR+ 15bp CDS), iii) whole (5UTR+15bp CDS), iv) 5'UTR only, with/without considering G-quadruplex 
 - Codon usage (of the 15 first bp of the CDS region)
 - Number of start and stop codons in teh 5'UTR
 - 5'UTR length
