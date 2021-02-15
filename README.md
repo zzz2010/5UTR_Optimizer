@@ -56,10 +56,6 @@ Build full model
 ``` 
 python run_pipeline.py model_build --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --model 1 --out output/muscle_randomforest.model
 ```
-Evaluate different choices of ML model
-``` 
-python run_pipeline.py model_eval --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --model 1 --out output/muscle_randomforest.model
-```
 
 ## Step 3. 5'UTR model evaluation
 
@@ -68,8 +64,9 @@ python run_pipeline.py model_eval --prefix output/input.fa --annotation_file dat
 **Algorithm used**: **TO BE FILLED IN**
 
 #### Running the code:
+Evaluate different choices of ML model
 ```
-ZHIZHUO TO FILL IN
+python run_pipeline.py model_eval --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --model 1 --out output/muscle_randomforest.model
 ```
 
 ## Step 4. Generation of novel evolved 5'UTR sequences
