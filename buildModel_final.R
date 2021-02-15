@@ -82,19 +82,19 @@ build_model<-function(y){
 
 featRange=1:ncol(selfeat.mat) #31
 train.x=selfeat.mat[,featRange]
-train.y=y[-test.id]
-
+train.y=y
 if(model==1){
-#########glmnet##############
-##train a model
-fit=cv.glmnet(train.x,train.y,nfolds=nfolds,parallel=T,alpha=0)
-
-}
-if(model==2){
 #########random forest#######
 fit=randomForest(as.matrix(train.x), train.y,importance=T)
 
 }
+if(model==2){
+#########glmnet##############
+##train a modelnfolds=5
+fit=cv.glmnet(train.x,train.y,nfolds=nfolds,parallel=T,alpha=0)
+
+}
+
 if(model==3){
 #######regression tree#######
 df=data.frame(y=train.y,as.matrix(train.x))

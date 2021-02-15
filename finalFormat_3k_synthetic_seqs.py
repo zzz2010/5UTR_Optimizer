@@ -3,7 +3,11 @@ import glob
 import math
 
 
-allFiles=glob.glob("output/*.sel")
+input_dir=sys.argv[1] #./output
+Ntotal=3585
+if len(sys.argv)>2:
+	Ntotal=int(sys.argv[2])
+allFiles=glob.glob(input_dir+"/*.sel")
 
 
 model_ostr_score=dict()
@@ -37,7 +41,7 @@ for fn in allFiles:
 		else:
 			print(outstr)
 			Nprinted+=1
-Ntotal=3585
+
 import operator
 perModelNum=int(math.ceil(float(Ntotal-Nprinted)/len(model_ostr_score)))
 

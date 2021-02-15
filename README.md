@@ -37,7 +37,7 @@ Features used in Random Forest model training:
 
 ### Running the code: 
 ``` 
-HERE DETAILS TO BE FILLED IN BY ZHIZHUO
+python run_pipeline.py feature_extract --input_fasta data/gencode_v17_5utr_15bpcds.fa --output_dir output/
 ```
 
 
@@ -51,10 +51,14 @@ The model trained for human sequences is available as part of this repository.
 Results: Using 10-fold cross-validation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction.
 
 ### Running the code: 
+Build full model
 ``` 
-HERE DETAILS TO BE FILLED IN BY ZHIZHUO
+python run_pipeline.py model_build --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --model 1 --out output/muscle_randomforest.model
 ```
-
+Evaluate different choices of ML model
+``` 
+python run_pipeline.py model_eval --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --model 1 --out output/muscle_randomforest.model
+```
 
 ## Step 3. Generation of novel evolved 5'UTR sequences
 
@@ -66,39 +70,9 @@ Additional details of individual steps are described in `makefile` file)
 
 #### Running the code:
 ```
-ZHIZHUO TO FILL IN 
+python run_pipeline.py  sequence_generate --n_total 3585 --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 -t ribo  -m output/muscle_randomforest.model  -o output/
 ```
-
-## Running individual scripts for each of the steps performed: 
-
-- 1. Extract DNA sequence 5'UTR+first CDS
-``` 
-make output/gencode_v17_5utr_15bpcds.fa
-```
-
-- 2. Compute sequence feature
-``` 
-use .viennarna-2.1.9
-use .biopython-1.64-python-2.7.1-sqlite3-rtrees
-make output/gencode_v17_5utr_15bpcds.fa.sparseFeature.txt.gz
-``` 
-- 3. Build prediction model for TE and Ribo-seq expression
-``` 
-make output/gencode_v17_5utr_15bpcds.fa.model
-``` 
-- 4. Design optimal 100bp 5UTR sequence for maximizing TE
-``` 
-make all_evojob.TE
-``` 
-- 5. Design optimal 100bp 5UTR sequence for maximizing Ribo-seq expression
-``` 
-make all_evojob.Ribo
-``` 
-- 6. Select diverse optimized sequences for 5'UTR synthesis 
-``` 
-make all_seljob
-make output/final/synthetic3K.txt
-``` 
+ 
 
 
 ## Additional data sources 
@@ -108,12 +82,22 @@ make output/final/synthetic3K.txt
  
 ## Dependencies and versions
 
-** ZHIZHUO TO FILL IN ** 
+#### Create Conda Environment with all the dependecy:
+```
+conda env create -f environment.yml
+```
+
 
 | Software | Version |
 | ------------- | ------------- |
-| Software1  | Version1  |
-| Software2  | Version X  |
+| python  | 3.5  |
+| viennarna  | 2.1.9  |
+| R  | 3.5.1  |
+| biopython  | 1.72 |
+| r-randomforest  | 4.6_14 |
+| r-ga  | 3.2  |
+| r-seqinr  | 3.6_1  |
+| r-glmnet  | 2.0_16  |
 
 
 ## Citation

@@ -80,8 +80,7 @@ print(sprintf("Number of training samples: %d",length(te)))
 
 
 predictive_performance<-function(y){
-model=2  ##random forest seems the best
-#model=1 ## glmnet
+
 test.id.list=createFolds(y,k=10)
 
 featRange=1:ncol(selfeat.mat) #31
@@ -94,18 +93,20 @@ train.y=y[-test.id]
 test.x=selfeat.mat[test.id,featRange]
 test.y=y[test.id]
 
+  if(model==1){
+#########random forest#######
+fit=randomForest(as.matrix(train.x), train.y,importance=T)
+pred.y=predict(fit,test.x)
+}
+
 nfolds=5
-if(model==1){
+if(model==2){
 #########glmnet##############
 ##train a model
 fit=cv.glmnet(train.x,train.y,nfolds=nfolds,parallel=T,alpha=0)
 pred.y=predict(fit$glmnet.fit,newx=test.x,s=fit$lambda.min)
 }
-if(model==2){
-#########random forest#######
-fit=randomForest(as.matrix(train.x), train.y,importance=T)
-pred.y=predict(fit,test.x)
-}
+
 if(model==3){
 #######regression tree#######
 df=data.frame(y=train.y,as.matrix(train.x))

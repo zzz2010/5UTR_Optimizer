@@ -1,0 +1,7 @@
+1. change repo name to 5UTR_Optimizer
+2. add parameter options and restructure buildModel_final.R
+3. create new R script evalModel_final.R for evaluation different choice of ML model
+4. rename evolutionDesign_Ribo.R to evolutionDesign.R, and add corresponding parameters options
+5. modify FeatureCommons.py, FeatureExtraction_final.py, FeatureExtraction_singleInput.py, finalFormat_3k_synthetic_seqs.py to be compatible for python 3
+6. add environment.yml for all dependencies
+7. modified readme with updated command example and software version
