@@ -19,7 +19,6 @@ This repository is the code accompanying the paper:High-Throughput 5’ UTR Engi
 - [Step 2. 5'UTR model generation](#Step-2.-5'UTR-model-generation)
 - [Step 3. 5'UTR model evaluation](#Step-3.-5'UTR-model-evaluation)
 - [Step 4. Generation of novel evolved 5'UTR sequences](#Step-4.-Generation-of-novel-evolved-5'UTR-sequences)
-- [Running individual scripts for each of the steps performed](#Running-individual-scripts-for-each-of-the-steps-performed)
 - [Additional data sources](#Additional-data-sources)
 - [Dependencies and versions](#Dependencies-and-versions)
 - [Citation](#Citation) 
