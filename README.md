@@ -82,11 +82,12 @@ python run_pipeline.py  sequence_generate --n_total 3585 --prefix output/input.f
  
 ## Dependencies and versions
 
-#### Create Conda Environment with all the dependecy:
+#### Create a Conda Environment with all the dependencies:
 ```
 conda env create -f environment.yml
 ```
 
+Here we list the specific versions of individual dependencies needed:
 
 | Software | Version |
 | ------------- | ------------- |
