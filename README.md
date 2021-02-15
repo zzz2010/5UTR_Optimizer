@@ -4,9 +4,9 @@ The goal of this workflow is to generate novel 5'UTR sequences with optimized fe
 This is achieved in 4 steps:
 
 - Step 1. **Feature extraction** from endogenous sequences 
-- Step 2. **Random Forest model generation** using extracted features to predict Translation Efficiency (TE)
-- Step 3. **Random Forest model evaluation** 
-- Step 4. Generation of novel **'evolved' sequences using a Genetic Algorithm** 
+- Step 2. Random Forest **model generation** using extracted features to predict Translation Efficiency (TE)
+- Step 3. Random Forest **model evaluation** 
+- Step 4. **Generation of novel 'evolved' sequences** using a Genetic Algorithm
 
 This repository is the code accompanying the paper:High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang*, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
 
