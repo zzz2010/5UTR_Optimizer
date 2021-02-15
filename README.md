@@ -1,11 +1,12 @@
 # Design of evolved synthetic 5'UTR sequences for enhanced protein production
 
 The goal of this workflow is to generate novel 5'UTR sequences with optimized features to maximize the translation efficiency of the constructs. 
-This is achieved in 3 steps:
+This is achieved in 4 steps:
 
 - Step 1. **Feature extraction** from endogenous sequences 
-- Step 2. **Random Forest model generation** and evaluation, using extracted features to predict Translation Efficiency (TE)
-- Step 3. Generation of novel **'evolved' sequences using a Genetic Algorithm** 
+- Step 2. **Random Forest model generation** using extracted features to predict Translation Efficiency (TE)
+- Step 3. **Random Forest model evaluation** using <TO BE FILLED IN> 
+- Step 4. Generation of novel **'evolved' sequences using a Genetic Algorithm** 
 
 This repository is the code accompanying the paper:High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang*, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
 
@@ -15,8 +16,9 @@ This repository is the code accompanying the paper:High-Throughput 5’ UTR Engi
 
 ## Table of Contents
 - [Step 1. Design of 5'UTR sequences](#Step-1.-Design-of-5'UTR-sequences)
-- [Step 2. 5'UTR model generation and evaluation](#Step-2.-5'UTR-model-generation-and-evaluation)
-- [Step 3. Generation of novel evolved 5'UTR sequences](#Step-3.-Generation-of-novel-evolved-5'UTR-sequences)
+- [Step 2. 5'UTR model generation](#Step-2.-5'UTR-model-generation)
+- [Step 3. 5'UTR model evaluation](#Step-3.-5'UTR-model-evaluation)
+- [Step 4. Generation of novel evolved 5'UTR sequences](#Step-4.-Generation-of-novel-evolved-5'UTR-sequences)
 - [Running individual scripts for each of the steps performed](#Running-individual-scripts-for-each-of-the-steps-performed)
 - [Additional data sources](#Additional-data-sources)
 - [Dependencies and versions](#Dependencies-and-versions)
@@ -40,8 +42,7 @@ Features used in Random Forest model training:
 python run_pipeline.py feature_extract --input_fasta data/gencode_v17_5utr_15bpcds.fa --output_dir output/
 ```
 
-
-## Step 2. 5'UTR model generation and evaluation
+## Step 2. 5'UTR model generation
 
 **Goal**: Generate and evaluate model  features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
 
@@ -60,7 +61,18 @@ Evaluate different choices of ML model
 python run_pipeline.py model_eval --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --model 1 --out output/muscle_randomforest.model
 ```
 
-## Step 3. Generation of novel evolved 5'UTR sequences
+## Step 3. 5'UTR model evaluation
+
+**Goal**: Evaluate the Random Forest models generated in the previous step to predict translation efficiency
+
+**Algorithm used**: **TO BE FILLED IN**
+
+#### Running the code:
+```
+ZHIZHUO TO FILL IN
+```
+
+## Step 4. Generation of novel evolved 5'UTR sequences
 
 **Goal**: Evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
 
@@ -72,8 +84,6 @@ Additional details of individual steps are described in `makefile` file)
 ```
 python run_pipeline.py  sequence_generate --n_total 3585 --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 -t ribo  -m output/muscle_randomforest.model  -o output/
 ```
- 
-
 
 ## Additional data sources 
 
@@ -95,10 +105,10 @@ Here we list the specific versions of individual dependencies needed:
 | viennarna  | 2.1.9  |
 | R  | 3.5.1  |
 | biopython  | 1.72 |
-| r-randomforest  | 4.6_14 |
+| r-randomforest  | 4.6.14 |
 | r-ga  | 3.2  |
-| r-seqinr  | 3.6_1  |
-| r-glmnet  | 2.0_16  |
+| r-seqinr  | 3.6.1  |
+| r-glmnet  | 2.0.16  |
 
 
 ## Citation
