@@ -5,3 +5,4 @@
 5. modify FeatureCommons.py, FeatureExtraction_final.py, FeatureExtraction_singleInput.py, finalFormat_3k_synthetic_seqs.py to be compatible for python 3
 6. add environment.yml for all dependencies
 7. modified readme with updated command example and software version
+8. deleted unneccessary old scripts
