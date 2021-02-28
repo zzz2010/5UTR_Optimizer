@@ -26,7 +26,7 @@ option_list = list(
               help="minimal RNASEQ RPKM for the gene included in training. In paper, we used 5 for muscle cell", metavar="min_rna_rpkm"),
 
     make_option(c("-r", "--min_riboseq_rpkm"), default=5,
-              help="minimal RiboSEQ RPKM for the gene included in training. In paper, we used 0.1 for muscle cell", metavar="min_ribo_rpkm"),
+              help="minimal RiboSEQ RPKM for the gene included in training. In paper, we used 0.1 for muscle cell", metavar="min_riboseq_rpkm"),
 
     make_option(c("-a", "--annotation_file"), type="character", default=NULL,
               help="transcript annotation file with gene id and RPKM information for rnaseq and riboseq", metavar="character"),

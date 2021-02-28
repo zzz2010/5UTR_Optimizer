@@ -43,8 +43,8 @@ def get_cmd_parser():
 
 
     model_eval_parser.add_argument("-p", "--prefix",required=True,help="sequence feature files prefix")
-    model_eval_parser.add_argument("-k", "--min_rna_rpkm", help="minimal RNASEQ RPKM for the gene included in training. In paper, we used 5 for muscle cell")
-    model_eval_parser.add_argument("-r", "--min_riboseq_rpkm", help="minimal RiboSEQ RPKM for the gene included in training. In paper, we used 0.1 for muscle cell")
+    model_eval_parser.add_argument("-k", "--min_rna_rpkm",default=50, help="minimal RNASEQ RPKM for the gene included in training. In paper, we used 5 for muscle cell")
+    model_eval_parser.add_argument("-r", "--min_riboseq_rpkm", default=5,help="minimal RiboSEQ RPKM for the gene included in training. In paper, we used 0.1 for muscle cell")
     model_eval_parser.add_argument("-a", "--annotation_file", required=True,help="transcript annotation file with gene id and RPKM information for rnaseq and riboseq")
     model_eval_parser.add_argument("-m", "--modellist" , default="1,2,3,4", help="1: randomforest, 2: glmnet, 3: regression tree, 4: SVM")
     model_eval_parser.add_argument("-j", "--n_cpus", default=16, help="number of cpus [default= %default]")
@@ -56,8 +56,8 @@ def get_cmd_parser():
                                                     """)
 
     sequence_generate_parser.add_argument("-p", "--prefix",required=True,help="sequence feature files prefix")
-    sequence_generate_parser.add_argument("-k", "--min_rna_rpkm", help="minimal RNASEQ RPKM for the gene included in training. In paper, we used 5 for muscle cell")
-    sequence_generate_parser.add_argument("-r", "--min_riboseq_rpkm", help="minimal RiboSEQ RPKM for the gene included in training. In paper, we used 0.1 for muscle cell")
+    sequence_generate_parser.add_argument("-k", "--min_rna_rpkm",default=50, help="minimal RNASEQ RPKM for the gene included in training. In paper, we used 5 for muscle cell")
+    sequence_generate_parser.add_argument("-r", "--min_riboseq_rpkm",default=5, help="minimal RiboSEQ RPKM for the gene included in training. In paper, we used 0.1 for muscle cell")
     sequence_generate_parser.add_argument("-a", "--annotation_file", required=True,help="transcript annotation file with gene id and RPKM information for rnaseq and riboseq")
     sequence_generate_parser.add_argument("-m", "--model_file" ,required=True,   help="path to the saved model file")
     sequence_generate_parser.add_argument("-j", "--n_cpus", default=16, help="number of cpus [default= %default]")
@@ -77,8 +77,8 @@ def get_cmd_parser():
                         default='./output',
                         help='the output directory')
 
-    fullpipe_parser.add_argument("-k", "--min_rna_rpkm", help="minimal RNASEQ RPKM for the gene included in training. In paper, we used 5 for muscle cell")
-    fullpipe_parser.add_argument("-r", "--min_riboseq_rpkm", help="minimal RiboSEQ RPKM for the gene included in training. In paper, we used 0.1 for muscle cell")
+    fullpipe_parser.add_argument("-k", "--min_rna_rpkm", default=50,help="minimal RNASEQ RPKM for the gene included in training. In paper, we used 5 for muscle cell")
+    fullpipe_parser.add_argument("-r", "--min_riboseq_rpkm", default=5,help="minimal RiboSEQ RPKM for the gene included in training. In paper, we used 0.1 for muscle cell")
     fullpipe_parser.add_argument("-a", "--annotation_file", help="transcript annotation file with gene id and RPKM information for rnaseq and riboseq")
     fullpipe_parser.add_argument("-m", "--model" , default=1, help="1: randomforest, 2: glmnet, 3: regression tree, 4: SVM  [default= %default]")
     fullpipe_parser.add_argument("-j", "--n_cpus", default=16, help="number of cpus [default= %default]")
@@ -116,6 +116,13 @@ if __name__ == '__main__':
                                                                               args.model,args.out  )
         oss(cmd)
 
+    if args.taskname=="model_eval" :
+        cmd="Rscript evalModel_final.R -p %s -a %s -k %s -r %s -m %s -o %s"%(args.prefix,
+                                                                              args.annotation_file,
+                                                                            args.min_rna_rpkm,
+                                                                             args.min_riboseq_rpkm,
+                                                                              args.modellist,args.out  )
+        oss(cmd)
 
     if args.taskname=="sequence_generate" or args.taskname=="full_pipe":
         for seed in range(int(args.n_total)):

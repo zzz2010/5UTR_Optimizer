@@ -3,6 +3,7 @@ name: 5utr
 channels:
  - defaults
  - bioconda
+ - anaconda
  - r
  - conda-forge
 dependencies:
@@ -11,11 +12,14 @@ dependencies:
   - r-optparse
   - r-seqinr=3.6_1
   - r-metrics
+  - r-xlsx
   - r-e1071
   - r-rpart
   - r-caret
+  - r-gridextra
   - r-ga=3.2
   - r-doparallel
+  - r-sparsem
   - r-glmnet=2.0_16
   - r-randomforest=4.6_14
   - bioconductor-genomicfeatures
@@ -23,3 +27,8 @@ dependencies:
   - biopython=1.72
   - r-tidyverse
   - viennarna=2.1.9
+  - matplotlib
+  - pandas
+  - seaborn
+  - xlrd
+

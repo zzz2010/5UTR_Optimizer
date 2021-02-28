@@ -41,29 +41,31 @@ The features used in Random Forest model training (extracted from endogenous seq
 python run_pipeline.py feature_extract --input_fasta data/gencode_v17_5utr_15bpcds.fa --output_dir output/
 ```
 
-## Step 2. 5'UTR model generation
+## Step 2. 5'UTR model evaluation
 
-**Goal**: Generate and evaluate model  features that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
+**Goal**: Evaluate different type of machine learning models in predicting translation efficiency, and decide which model to use in the next step
+Results: Using 10-fold cross-validation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction.
+
+#### Running the code:
+
+```
+python run_pipeline.py model_eval --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --modellist 1,2,3,4 --out output/muscle_eval.xlsx
+```
+
+## Step 3. 5'UTR model generation
+
+**Goal**: Generate model  that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
 
 **Algorithm used**: **Random Forest** to build a prediction model 
 
 The model trained for human sequences is available as part of this repository. 
-Results: Using 10-fold cross-validation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction.
 
 ### Running the code: 
 ``` 
 python run_pipeline.py model_build --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --model 1 --out output/muscle_randomforest.model
 ```
 
-## Step 3. 5'UTR model evaluation
 
-**Goal**: Evaluate the Random Forest models generated in the previous step to predict translation efficiency
-
-#### Running the code:
-
-```
-python run_pipeline.py model_eval --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --model 1 --out output/muscle_randomforest.model
-```
 
 ## Step 4. Generation of novel evolved 5'UTR sequences
 
