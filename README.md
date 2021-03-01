@@ -16,9 +16,9 @@ This repository is the code accompanying the paper:High-Throughput 5’ UTR Engi
 
 ## Table of Contents
 - [Step 1. Feature extraction of 5'UTR sequences](#step-1-feature-extraction-of-5utr-sequences)
-- [Step 2. 5UTR model generation](#Step-2-5UTR-model-generation)
-- [Step 3. 5UTR model evaluation](#Step-3-5UTR-model-evaluation)
-- [Step 4. Generation of novel evolved 5UTR sequences](#Step-4-Generation-of-novel-evolved-5UTR-sequences)
+- [Step 2. 5'UTR model generation](#step-2-5utr-model-generation)
+- [Step 3. 5'UTR model evaluation](#step-3-5utr-model-evaluation)
+- [Step 4. Generation of novel evolved 5'UTR sequences](#step-4-generation-of-novel-evolved-5utr-sequences)
 - [Additional data sources](#Additional-data-sources)
 - [Dependencies and versions](#Dependencies-and-versions)
 - [Citation](#Citation) 
@@ -41,7 +41,7 @@ The features extracted from endogenous sequences (which will be used to generate
 python run_pipeline.py feature_extract --input_fasta data/gencode_v17_5utr_15bpcds.fa --output_dir output/
 ```
 
-## Step 2. 5UTR model generation
+## Step 2. 5'UTR model generation
 
 **Goal**: Generate model  that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
 
@@ -54,7 +54,7 @@ The model trained for human sequences is available as part of this repository.
 python run_pipeline.py model_build --prefix output/input.fa --annotation_file data/df_counts_and_len.TE_sorted.Muscle.with_annot.txt --min_rna_rpkm 5 --min_riboseq_rpkm 0.1 --model 1 --out output/muscle_randomforest.model
 ```
 
-## Step 3. 5UTR model evaluation
+## Step 3. 5'UTR model evaluation
 
 **Goal**: Evaluate different type of machine learning models in predicting translation efficiency, and decide which model to use in the next step
 Results: Using 10-fold cross-validation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction.
@@ -66,7 +66,7 @@ python run_pipeline.py model_eval --prefix output/input.fa --annotation_file dat
 ```
 
 
-## Step 4. Generation of novel evolved 5UTR sequences
+## Step 4. Generation of novel evolved 5'UTR sequences
 
 **Goal**: Evolve endogenous 5'UTR sequences to obtain 5'UTRs with increased translation efficiency
 
