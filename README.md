@@ -15,7 +15,7 @@ This repository is the code accompanying the paper:High-Throughput 5’ UTR Engi
 
 
 ## Table of Contents
-- [Step 1. Design of 5UTR sequences](#step-1-design-of-5utr-sequences)
+- [Step 1. Feature extraction of 5UTR sequences](#step-1-feature-extraction-of-5utr-sequences)
 - [Step 2. 5UTR model generation](#Step-2-5UTR-model-generation)
 - [Step 3. 5UTR model evaluation](#Step-3-5UTR-model-evaluation)
 - [Step 4. Generation of novel evolved 5UTR sequences](#Step-4-Generation-of-novel-evolved-5UTR-sequences)
