@@ -45,7 +45,7 @@ python run_pipeline.py feature_extract --input_fasta data/gencode_v17_5utr_15bpc
 
 **Goal**: Generate model  that correspond to optimal 5'UTRs to maximize the translation efficiency (TE).
 
-**Algorithm used**: **Random Forest** to build a prediction model 
+**Algorithm used**: **Random Forest** (1) to build a prediction model is recommended, however the user can also choose to run glmnet, Rpart and SVM. 
 
 The model trained for human sequences is available as part of this repository. 
 
