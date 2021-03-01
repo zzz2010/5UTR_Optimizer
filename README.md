@@ -56,8 +56,10 @@ python run_pipeline.py model_build --prefix output/input.fa --annotation_file da
 
 ## Step 3. 5'UTR model evaluation
 
-**Goal**: Evaluate different type of machine learning models in predicting translation efficiency, and decide which model to use in the next step
-Results: Using 10-fold cross-validation, we obtained  0.71 pearson correlation in TE prediction, and 0.74 in RNA expression prediction.
+**Goal**: Evaluate different type of machine learning models in predicting translation efficiency, and decide which model to use in the next step (models are evaluated in terms of Spearman correlation and root mean square error). 
+
+Results: Using 10-fold cross-validation, we obtained  0.71 Spearman correlation in TE prediction, and 0.74 in RNA expression prediction.
+
 
 #### Running the code:
 
