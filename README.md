@@ -56,9 +56,11 @@ python run_pipeline.py model_build --prefix output/input.fa --annotation_file da
 
 ## Step 3. 5'UTR model evaluation
 
-**Goal**: Evaluate different type of machine learning models in predicting translation efficiency, and decide which model to use in the next step (models are evaluated in terms of Spearman correlation and root mean square error). 
+**Goal**: Models are evaluated in terms of Spearman correlation and root mean square error, and 10-fold cross-validation. 
 
 Results: Using 10-fold cross-validation, we obtained  0.71 Spearman correlation in TE prediction, and 0.74 in RNA expression prediction.
+
+Note: This module can also be used to evaluate/compare the performance of models with different machine learning algorithms. If the the user finds that a different machine learning algorithm performs better, then should go back to step #2 and re-generate the model with a different machine learning algorithm (step #2 generates models with 100% of the data).  
 
 
 #### Running the code:
