@@ -5,7 +5,7 @@ This is achieved in 4 steps:
 
 - Step 1. **Feature extraction** from endogenous sequences 
 - Step 2. **Model generation** using extracted features to predict Translation Efficiency (TE)
-- Step 3. **Model evaluation** 
+- Step 3. **Model evaluation** using Spearman correlation, root mean square error and 10-fold cross-validation
 - Step 4. **Generation of novel 'evolved' sequences** using a Genetic Algorithm
 
 This repository is the code accompanying the paper:High-Throughput 5’ UTR Engineering for Enhanced Protein Production in Non-Viral Gene Therapies. Jicong Cao*, Eva Maria Novoa*, Zhizhuo Zhang*, William C.W. Chen, Dianbo Liu, Gigi C G Choi, Alan S L Wong, Claudia Wehrspaun, Manolis Kellis, Timothy K Lu. bioRxiv 2020. doi: https://doi.org/10.1101/2020.03.24.006486
@@ -56,7 +56,7 @@ python run_pipeline.py model_build --prefix output/input.fa --annotation_file da
 
 ## Step 3. 5'UTR model evaluation
 
-**Goal**: Models are evaluated in terms of Spearman correlation and root mean square error, and 10-fold cross-validation. 
+**Goal**: Models are evaluated in terms of Spearman correlation, root mean square error and 10-fold cross-validation. 
 
 Results: Using 10-fold cross-validation, we obtained  0.71 Spearman correlation in TE prediction, and 0.74 in RNA expression prediction.
 
